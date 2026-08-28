@@ -1,0 +1,8 @@
+{
+  "status": "initializing",
+  "checked_at": null,
+  "detail": "Waiting for the first watchdog heartbeat after dashboard upgrade.",
+  "github_run_id": null,
+  "github_run_number": null,
+  "github_event": null
+}
