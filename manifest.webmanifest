@@ -1,0 +1,10 @@
+{
+  "name": "TFD Catalyst Dashboard",
+  "short_name": "TFD Catalyst",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#05080d",
+  "theme_color": "#05080d",
+  "description": "TFD Crystallization Catalyst automation health and countdown dashboard",
+  "icons": [{"src":"catalyst.jpg","sizes":"any","type":"image/jpeg","purpose":"any maskable"}]
+}
