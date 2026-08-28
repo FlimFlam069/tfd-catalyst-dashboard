@@ -1,0 +1,11 @@
+{
+  "research_name": "Crystallization Catalyst",
+  "status": "researching",
+  "checked_at": "2026-08-28T17:21:09.587719-04:00",
+  "remaining_seconds": 9107,
+  "estimated_complete_at": "2026-08-28T19:52:56.587719-04:00",
+  "detail": "Research loop healthy",
+  "github_run_id": "33212160576",
+  "github_run_number": "54",
+  "github_event": "workflow_dispatch"
+}
