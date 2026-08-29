@@ -1,8 +1,8 @@
 {
-  "status": "initializing",
-  "checked_at": null,
-  "detail": "Waiting for the first watchdog heartbeat after dashboard upgrade.",
-  "github_run_id": null,
-  "github_run_number": null,
-  "github_event": null
+  "status": "healthy",
+  "checked_at": "2026-08-28T22:41:36.022001-04:00",
+  "detail": "Watchdog checked research-loop freshness",
+  "github_run_id": "33229578948",
+  "github_run_number": "2",
+  "github_event": "push"
 }
