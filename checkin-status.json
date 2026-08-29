@@ -1,10 +1,10 @@
 {
-  "status": "verified_claimed",
-  "checked_at": "2026-08-29T07:27:15.370734-04:00",
+  "status": "not_claimable",
+  "checked_at": "2026-08-29T15:24:19.626253-04:00",
   "last_verified_claim_at": "2026-08-29T07:27:15.370734-04:00",
-  "detail": "Daily Companion check-in reward was claimed and verified.",
-  "github_run_id": "33250153819",
-  "github_run_number": "9",
-  "github_event": "push",
+  "detail": "Automation checked, but the API reported no cumulative reward claimable. This is not counted as a successful daily reward claim.",
+  "github_run_id": "33270781191",
+  "github_run_number": "10",
+  "github_event": "schedule",
   "job_status": "success"
 }
