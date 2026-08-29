@@ -1,10 +1,10 @@
 {
   "status": "not_claimable",
-  "checked_at": "2026-08-29T15:24:19.626253-04:00",
+  "checked_at": "2026-08-29T18:16:15.827284-04:00",
   "last_verified_claim_at": "2026-08-29T07:27:15.370734-04:00",
   "detail": "Automation checked, but the API reported no cumulative reward claimable. This is not counted as a successful daily reward claim.",
-  "github_run_id": "33270781191",
-  "github_run_number": "10",
-  "github_event": "schedule",
+  "github_run_id": "33278157265",
+  "github_run_number": "11",
+  "github_event": "push",
   "job_status": "success"
 }
