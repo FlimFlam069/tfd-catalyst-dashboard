@@ -7,5 +7,6 @@
   "detail": "Claim/restart successful",
   "github_run_id": "33233353731",
   "github_run_number": "59",
-  "github_event": "workflow_dispatch"
+  "github_event": "workflow_dispatch",
+  "lifetime_claimed_by_automation": 12
 }
