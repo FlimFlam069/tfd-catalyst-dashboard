@@ -1,9 +1,9 @@
 {
-  "status": "verified_received",
+  "status": "verified_claimed",
   "checked_at": "2026-08-30T10:53:18.137671-04:00",
-  "last_verified_claim_at": "2026-08-30T10:53:18.137671-04:00",
-  "claim_source": "unknown",
-  "detail": "Daily Companion check-in reward is already received. The API does not identify whether it was claimed in-game or by the automation.",
+  "last_verified_claim_at": "2026-08-30T05:17:25.237680-04:00",
+  "claim_source": "automation",
+  "detail": "Daily Companion check-in reward was claimed by the automation and remains verified received.",
   "check_mode": "regular_7h",
   "alert_stage": null,
   "github_run_id": "33318088584",
