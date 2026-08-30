@@ -1,8 +1,8 @@
 {
   "status": "healthy",
-  "checked_at": "2026-08-30T14:44:34.739749-04:00",
+  "checked_at": "2026-08-30T17:52:32.072478-04:00",
   "detail": "Watchdog checked research-loop freshness",
-  "github_run_id": "33328928020",
-  "github_run_number": "12",
+  "github_run_id": "33337600277",
+  "github_run_number": "13",
   "github_event": "schedule"
 }
