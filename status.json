@@ -1,15 +1,15 @@
 {
   "research_name": "Crystallization Catalyst",
-  "status": "read_error",
-  "checked_at": "2026-09-17T06:08:23.258732-04:00",
-  "remaining_seconds": null,
-  "estimated_complete_at": null,
-  "next_check_at": null,
+  "status": "researching",
+  "checked_at": "2026-09-17T08:02:53.279379-04:00",
+  "remaining_seconds": 22947,
+  "estimated_complete_at": "2026-09-17T14:25:20.279379-04:00",
+  "next_check_at": "2026-09-17T14:22:20.279379-04:00",
   "early_check_seconds": 180,
-  "detail": "Unexpected Companion business code 16",
-  "github_run_id": "35208880605",
-  "github_run_number": "344",
+  "detail": "Claim/restart successful; adaptive next check scheduled",
+  "github_run_id": "35218892859",
+  "github_run_number": "345",
   "github_event": "schedule",
-  "lifetime_claimed_by_automation": 63,
-  "last_catalyst_claimed_at": "2026-09-16T15:45:57-04:00"
+  "lifetime_claimed_by_automation": 64,
+  "last_catalyst_claimed_at": "2026-09-17T08:02:49-04:00"
 }
