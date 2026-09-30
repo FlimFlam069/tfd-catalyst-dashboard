@@ -21,7 +21,7 @@ function render() {
   const issues=failures.size>0||['bad','warn'].includes(rh[1])||['bad','warn'].includes(wh[1])||c?.status==='error';
   $('liveFlag').textContent=failures.size?'CACHED ●':issues?'ATTENTION ●':'CURRENT ●';
   $('liveFlag').className=issues?'warn':'live';
-  $('researchState').textContent=rh[0]; $('researchState').className='state '+rh[1];
+  $('researchState').textContent=r?.status==='researching'&&rh[1]!=='bad'?'RESEARCHING':rh[0]; $('researchState').className='state '+rh[1];
   const end=time(r?.estimated_complete_at),due=time(r?.next_check_at);
   $('countdown').textContent=r?.status==='deferred_game_active'?'IN GAME':r?.status==='researching'&&end!==null?(end>now?duration((end-now)/1000):'CHECK DUE'):'—';
   $('completeAt').textContent=r?.status==='researching'&&end!==null?`Estimated completion: ${date(r.estimated_complete_at)}${end<=now?' • awaiting live verification':''}`:r?.detail||'Waiting for status…';
