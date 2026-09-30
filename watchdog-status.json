@@ -1,8 +1,11 @@
 {
+  "checked_at": "2026-09-30T23:44:41.971077+00:00",
+  "github_run_id": "36792607865",
+  "github_run_number": "207",
+  "github_event": "push",
+  "version": "2.0.0",
   "status": "healthy",
-  "checked_at": "2026-09-30T16:17:23.581973-04:00",
-  "detail": "Watchdog checked research-loop freshness",
-  "github_run_id": "36771545945",
-  "github_run_number": "206",
-  "github_event": "schedule"
+  "detail": "Research scheduler and live status are current",
+  "classification": "healthy",
+  "last_dispatch_at": null
 }
