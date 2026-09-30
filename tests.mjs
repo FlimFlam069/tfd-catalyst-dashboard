@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth} from './health.mjs';
+const now=Date.parse('2026-09-30T20:00:00Z');
+test('staggered research slot is :02',()=>assert.equal(nextSlot(now,[2,7,12,17,22,27,32,37,42,47,52,57]).toISOString(),'2026-09-30T20:02:00.000Z'));
+test('watchdog slot is :13',()=>assert.equal(nextSlot(now,[13,43]).toISOString(),'2026-09-30T20:13:00.000Z'));
+test('rolling cadence follows UTC cron, not prior actual run',()=>assert.equal(nextCheckin(now,{}).toISOString(),'2026-09-30T22:15:00.000Z'));
+test('daily safety slot precedes regular slot',()=>assert.equal(nextCheckin(Date.parse('2026-10-01T05:30:00Z'),{}).toISOString(),'2026-10-01T05:55:00.000Z'));
+test('previous reward becomes unverified at reset',()=>assert.equal(rewardCurrent({last_verified_claim_at:'2026-09-30T06:59:00Z'},now),false));
+test('unknown research is never healthy',()=>assert.equal(researchHealth(null,now)[0],'UNKNOWN'));
+test('stale researching does not stay green',()=>assert.equal(researchHealth({status:'researching',checked_at:'2026-09-30T12:00:00Z',next_check_at:'2026-10-01T00:00:00Z'},now)[0],'STALE'));
+test('stale watchdog is not standby',()=>assert.equal(watchdogHealth({status:'healthy',checked_at:'2026-09-30T18:00:00Z'},now)[0],'STALE'));
+test('requested rescue is not a verified recovery',()=>assert.equal(watchdogHealth({status:'rescue_dispatched',checked_at:'2026-09-30T19:59:00Z'},now)[0],'RECOVERY REQUESTED'));
