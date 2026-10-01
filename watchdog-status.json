@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-10-01T05:47:01.975572+00:00",
-  "github_run_id": "36821436403",
-  "github_run_number": "209",
+  "checked_at": "2026-10-01T13:05:30.337754+00:00",
+  "github_run_id": "36866198733",
+  "github_run_number": "210",
   "github_event": "schedule",
   "version": "2.0.0",
   "status": "rescue_dispatched",
   "detail": "Research workflow heartbeat is stale or invalid; recovery requested, not yet verified",
   "classification": "scheduler_gap",
-  "last_dispatch_at": "2026-10-01T05:47:01.975572+00:00"
+  "last_dispatch_at": "2026-10-01T13:05:30.337754+00:00"
 }
