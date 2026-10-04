@@ -1,12 +1,11 @@
 {
-  "checked_at": "2026-10-03T21:45:09.094849+00:00",
-  "github_run_id": "37156185461",
-  "github_run_number": "224",
+  "checked_at": "2026-10-04T00:34:17.512025+00:00",
+  "github_run_id": "37165348400",
+  "github_run_number": "225",
   "github_event": "schedule",
   "version": "2.0.0",
-  "status": "rescue_dispatched",
-  "detail": "The last GitHub research run started 103 minutes ago, beyond the 60-minute scheduler check limit; this alone does not mean in-game research stopped. A new check was requested on Oct 03, 2026 at 05:45 PM EDT and is expected to be completed on Oct 03, 2026 at 05:55 PM EDT (estimated). Its result is currently pending. GitHub queue delays may extend the estimated completion time.",
-  "classification": "scheduler_gap",
-  "expected_completion_at": "2026-10-03T21:55:11.592643+00:00",
+  "status": "healthy",
+  "detail": "Research scheduler and live status are current",
+  "classification": "healthy",
   "last_dispatch_at": "2026-10-03T21:45:11.592643+00:00"
 }
