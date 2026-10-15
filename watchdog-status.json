@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-15T12:01:22.497875+00:00",
-  "github_run_id": "38731428748",
-  "github_run_number": "276",
-  "github_event": "push",
+  "checked_at": "2026-10-15T12:51:02.254152+00:00",
+  "github_run_id": "38737792149",
+  "github_run_number": "277",
+  "github_event": "schedule",
   "version": "2.0.0",
   "status": "healthy",
   "detail": "Research scheduler and live status are current",
