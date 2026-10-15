@@ -1,14 +1,14 @@
 {
   "research_name": "Crystallization Catalyst",
   "status": "read_error",
-  "checked_at": "2026-10-15T04:21:14.218184-04:00",
+  "checked_at": "2026-10-15T04:31:20.214664-04:00",
   "remaining_seconds": null,
   "estimated_complete_at": null,
   "next_check_at": null,
   "early_check_seconds": 180,
   "detail": "Unexpected Companion business code 16",
-  "github_run_id": "38705029899",
-  "github_run_number": "824",
+  "github_run_id": "38706233729",
+  "github_run_number": "825",
   "github_event": "workflow_dispatch",
   "lifetime_claimed_by_automation": 145,
   "last_catalyst_claimed_at": "2026-10-14T23:43:21-04:00"
