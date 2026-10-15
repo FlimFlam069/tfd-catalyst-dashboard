@@ -1,11 +1,12 @@
 {
-  "checked_at": "2026-10-15T01:48:45.543418+00:00",
-  "github_run_id": "38667645639",
-  "github_run_number": "274",
+  "checked_at": "2026-10-15T07:21:46.167291+00:00",
+  "github_run_id": "38698217295",
+  "github_run_number": "275",
   "github_event": "schedule",
   "version": "2.0.0",
-  "status": "healthy",
-  "detail": "Research scheduler and live status are current",
-  "classification": "healthy",
-  "last_dispatch_at": "2026-10-14T17:05:36.431351+00:00"
+  "status": "rescue_dispatched",
+  "detail": "Latest research workflow failed; includes persistence/publishing failures. A new check was requested on Oct 15, 2026 at 03:21 AM EDT and is expected to be completed on Oct 15, 2026 at 03:31 AM EDT (estimated). Its result is currently pending. GitHub queue delays may extend the estimated completion time.",
+  "classification": "workflow_failed",
+  "expected_completion_at": "2026-10-15T07:31:48.520746+00:00",
+  "last_dispatch_at": "2026-10-15T07:21:48.520746+00:00"
 }
