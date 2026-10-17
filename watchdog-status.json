@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-10-17T18:48:17.804153+00:00",
-  "github_run_id": "39059697180",
-  "github_run_number": "291",
+  "checked_at": "2026-10-17T21:24:54.966379+00:00",
+  "github_run_id": "39070829842",
+  "github_run_number": "292",
   "github_event": "schedule",
   "version": "2.0.0",
-  "status": "healthy",
-  "detail": "Research scheduler and live status are current",
-  "classification": "healthy",
+  "status": "playing_deferred",
+  "detail": "Game active: write intentionally deferred",
+  "classification": "playing_deferred",
   "last_dispatch_at": "2026-10-17T12:55:40.891304+00:00"
 }
