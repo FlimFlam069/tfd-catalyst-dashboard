@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-10-19T00:27:56.456810+00:00",
-  "github_run_id": "39180883117",
-  "github_run_number": "301",
+  "checked_at": "2026-10-19T05:17:24.135699+00:00",
+  "github_run_id": "39203757840",
+  "github_run_number": "302",
   "github_event": "schedule",
   "version": "2.0.0",
-  "status": "playing_deferred",
-  "detail": "Game active: write intentionally deferred",
-  "classification": "playing_deferred",
+  "status": "running",
+  "detail": "A research run is already queued or running",
+  "classification": "running",
   "last_dispatch_at": "2026-10-18T22:35:13.527783+00:00"
 }
