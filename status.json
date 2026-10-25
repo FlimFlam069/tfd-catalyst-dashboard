@@ -1,14 +1,14 @@
 {
   "research_name": "Crystallization Catalyst",
   "status": "deferred_game_active",
-  "checked_at": "2026-10-24T20:12:56.590450-04:00",
+  "checked_at": "2026-10-24T20:28:46.170732-04:00",
   "remaining_seconds": 0,
-  "estimated_complete_at": "2026-10-24T20:12:56.590450-04:00",
+  "estimated_complete_at": "2026-10-24T20:28:46.170732-04:00",
   "next_check_at": null,
   "early_check_seconds": 180,
   "detail": "Claim deferred because game is active",
-  "github_run_id": "40145795652",
-  "github_run_number": "1071",
+  "github_run_id": "40146829841",
+  "github_run_number": "1072",
   "github_event": "workflow_dispatch",
   "lifetime_claimed_by_automation": 175,
   "last_catalyst_claimed_at": "2026-10-24T09:08:50-04:00"
