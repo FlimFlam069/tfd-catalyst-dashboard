@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-10-29T20:34:22.224168+00:00",
-  "github_run_id": "40950205859",
-  "github_run_number": "360",
+  "checked_at": "2026-10-30T00:19:40.660177+00:00",
+  "github_run_id": "40978971196",
+  "github_run_number": "361",
   "github_event": "schedule",
   "version": "2.0.0",
-  "status": "running",
-  "detail": "A research run is already queued or running",
-  "classification": "running",
+  "status": "healthy",
+  "detail": "Research scheduler and live status are current",
+  "classification": "healthy",
   "last_dispatch_at": "2026-10-29T15:31:38.161434+00:00"
 }
