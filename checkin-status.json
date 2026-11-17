@@ -1,13 +1,13 @@
 {
   "status": "verified_claimed",
-  "checked_at": "2026-11-17T08:27:03.785157-05:00",
+  "checked_at": "2026-11-17T09:56:25.335605-05:00",
   "last_verified_claim_at": "2026-11-17T08:27:03.785157-05:00",
   "claim_source": "automation",
-  "detail": "Daily Companion check-in reward was claimed by the automation and verified received.",
-  "check_mode": "regular_7h",
+  "detail": "Daily Companion check-in reward was claimed by the automation and remains verified received.",
+  "check_mode": "heavy_0355",
   "alert_stage": null,
-  "github_run_id": "44092806966",
-  "github_run_number": "424",
+  "github_run_id": "44108591197",
+  "github_run_number": "425",
   "github_event": "schedule",
   "job_status": "success"
 }
