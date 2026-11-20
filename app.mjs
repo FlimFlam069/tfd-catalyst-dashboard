@@ -1,4 +1,4 @@
-import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth} from './health.mjs';
+import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs';
 const $ = id => document.getElementById(id);
 const repo = 'https://github.com/FlimFlam069/-tfd-companion-automation';
 const data = {research:null,watchdog:null,checkin:null};
@@ -12,6 +12,12 @@ function link(id, d) {
   const a=document.createElement('a');a.href=`${repo}/actions/runs/${d.github_run_id}`;a.target='_blank';a.rel='noopener';a.textContent=`Run #${d.github_run_number || d.github_run_id}`;e.append(a);
 }
 function health(id,meta,tuple) {$(id).textContent=tuple[0];$(id).className=tuple[1];$(meta).textContent=tuple[2];}
+function renderSlot(stateId,countId,detailId,slot,now) {
+  const v=catalystSlotView(slot,now);
+  $(stateId).textContent=v.state;$(stateId).className='state '+v.tone;
+  $(countId).textContent=typeof v.countdown==='number'?duration(v.countdown):v.countdown||'—';
+  $(detailId).textContent=v.end!==null?`Estimated completion: ${date(slot.estimated_complete_at)}${v.end<=now?' • awaiting live verification':''}`:v.detail;
+}
 function render() {
   const now=Date.now(),r=data.research,w=data.watchdog,c=data.checkin;
   const rh=researchHealth(r,now),wh=watchdogHealth(w,now);
@@ -21,10 +27,9 @@ function render() {
   const issues=failures.size>0||['bad','warn'].includes(rh[1])||['bad','warn'].includes(wh[1])||c?.status==='error';
   $('liveFlag').textContent=failures.size?'CACHED ●':issues?'ATTENTION ●':'CURRENT ●';
   $('liveFlag').className=issues?'warn':'live';
-  $('researchState').textContent=r?.status==='researching'&&rh[1]!=='bad'?'RESEARCHING':rh[0]; $('researchState').className='state '+rh[1];
-  const end=time(r?.estimated_complete_at),due=time(r?.next_check_at);
-  $('countdown').textContent=r?.status==='deferred_game_active'?'IN GAME':r?.status==='researching'&&end!==null?(end>now?duration((end-now)/1000):'CHECK DUE'):'—';
-  $('completeAt').textContent=r?.status==='researching'&&end!==null?`Estimated completion: ${date(r.estimated_complete_at)}${end<=now?' • awaiting live verification':''}`:r?.detail||'Waiting for status…';
+  renderSlot('researchState','countdown','completeAt',r?.slots?.standard||r,now);
+  renderSlot('battleState','battleCountdown','battleCompleteAt',r?.slots?.battle_pass,now);
+  const due=time(r?.next_check_at);
   const tick=nextSlot(now,[2,7,12,17,22,27,32,37,42,47,52,57]),watch=nextSlot(now,[13,43]);
   const slot=d=>`${date(d.toISOString())} • ${duration((d-now)/1000)}`;
   $('nextSync').textContent=`Next cron target: ${slot(tick)}`;

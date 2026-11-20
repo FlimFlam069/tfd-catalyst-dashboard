@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth} from './health.mjs';
+import {nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs';
 const now=Date.parse('2026-09-30T20:00:00Z');
 test('staggered research slot is :02',()=>assert.equal(nextSlot(now,[2,7,12,17,22,27,32,37,42,47,52,57]).toISOString(),'2026-09-30T20:02:00.000Z'));
 test('watchdog slot is :13',()=>assert.equal(nextSlot(now,[13,43]).toISOString(),'2026-09-30T20:13:00.000Z'));
@@ -11,3 +11,6 @@ test('unknown research is never healthy',()=>assert.equal(researchHealth(null,no
 test('stale researching does not stay green',()=>assert.equal(researchHealth({status:'researching',checked_at:'2026-09-30T12:00:00Z',next_check_at:'2026-10-01T00:00:00Z'},now)[0],'STALE'));
 test('stale watchdog is not standby',()=>assert.equal(watchdogHealth({status:'healthy',checked_at:'2026-09-30T18:00:00Z'},now)[0],'STALE'));
 test('requested rescue is not a verified recovery',()=>assert.equal(watchdogHealth({status:'rescue_dispatched',checked_at:'2026-09-30T19:59:00Z'},now)[0],'RECOVERY REQUESTED'));
+
+test('separate catalyst slots show their own countdowns',()=>{const base={status:'researching',checked_at:'2026-09-30T19:59:00Z',next_check_at:'2026-09-30T20:10:00Z'};assert.equal(catalystSlotView({...base,estimated_complete_at:'2026-09-30T21:00:00Z'},now).countdown,3600);assert.equal(catalystSlotView({...base,estimated_complete_at:'2026-09-30T20:20:00Z'},now).countdown,1200);});
+test('missing battle pass data is shown as waiting',()=>assert.equal(catalystSlotView(null,now).state,'WAITING'));

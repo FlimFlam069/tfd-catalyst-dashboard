@@ -1,4 +1,4 @@
-export const VERSION = '2.0.0';
+export const VERSION = '2.1.0';
 export function time(value) {
   if (typeof value !== 'string' || !value.trim()) return null;
   const n = Date.parse(value); return Number.isFinite(n) ? n : null;
@@ -42,6 +42,18 @@ export function researchHealth(data, now) {
   if (state !== 'researching') return ['ATTENTION', 'bad', data.detail || 'Research needs attention.'];
   if (due === null || now - due > 10 * 60000) return ['CHECK OVERDUE', 'bad', 'Scheduled live TFD check is overdue or missing.'];
   return due > now ? ['SLEEPING', 'good', 'Research active; waiting for the next live check.'] : ['CHECK DUE', 'warn', 'Waiting for a live check; completion is not yet verified.'];
+}
+export function catalystSlotView(data, now) {
+  if (!data) return {state:'WAITING', tone:'warn', end:null, countdown:null, detail:'Waiting for the first check.'};
+  const health = researchHealth(data, now), end = time(data.estimated_complete_at);
+  return {
+    state: data.status === 'researching' && health[1] !== 'bad' ? 'RESEARCHING' : health[0],
+    tone: health[1],
+    end: data.status === 'researching' ? end : null,
+    countdown: data.status === 'deferred_game_active' ? 'IN GAME' :
+      data.status === 'researching' && end !== null ? (end > now ? (end - now) / 1000 : 'CHECK DUE') : null,
+    detail: data.detail || health[2]
+  };
 }
 export function watchdogHealth(data, now) {
   const checked = time(data?.checked_at);
