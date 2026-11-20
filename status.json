@@ -1,15 +1,15 @@
 {
   "research_name": "Crystallization Catalyst",
   "status": "researching",
-  "checked_at": "2026-11-19T21:00:43.685695-05:00",
-  "remaining_seconds": 22947,
-  "estimated_complete_at": "2026-11-20T03:23:10.685695-05:00",
-  "next_check_at": "2026-11-20T00:00:43.685695-05:00",
+  "checked_at": "2026-11-19T21:34:35.439886-05:00",
+  "remaining_seconds": 20916,
+  "estimated_complete_at": "2026-11-20T03:23:11.439886-05:00",
+  "next_check_at": "2026-11-20T00:34:35.439886-05:00",
   "early_check_seconds": 180,
-  "detail": "Claim/restart successful; adaptive next check scheduled",
-  "github_run_id": "44657659460",
-  "github_run_number": "1608",
-  "github_event": "workflow_dispatch",
+  "detail": "Research loop healthy; adaptive next check scheduled",
+  "github_run_id": "44661760057",
+  "github_run_number": "1609",
+  "github_event": "schedule",
   "lifetime_claimed_by_automation": 263,
   "last_catalyst_claimed_at": "2026-11-19T21:00:39-05:00"
 }
