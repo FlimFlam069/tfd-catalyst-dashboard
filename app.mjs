@@ -1,4 +1,4 @@
-import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs';
+import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs?v=2.1.0';
 const $ = id => document.getElementById(id);
 const repo = 'https://github.com/FlimFlam069/-tfd-companion-automation';
 const data = {research:null,watchdog:null,checkin:null};
