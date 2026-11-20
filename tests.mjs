@@ -24,7 +24,8 @@ test('dashboard renders two independent timers', async()=>{
   const slot=minutes=>({status:'researching',checked_at:iso(-1),next_check_at:iso(minutes-3),estimated_complete_at:iso(minutes)});
   const standard=slot(60),battle=slot(20);
   const elements=new Map();
-  const element=id=>{if(!elements.has(id))elements.set(id,{textContent:'',className:'',disabled:false,addEventListener(){},replaceChildren(){},append(){}});return elements.get(id);};
+  const element=id=>{if(!elements.has(id))elements.set(id,{textContent:'',className:'',disabled:false,handlers:{},addEventListener(type,fn){this.handlers[type]=fn;},replaceChildren(){},append(){}});return elements.get(id);};
+  let research={...standard,slots:{standard,battle_pass:battle},next_check_at:battle.next_check_at};
   const originals={document:globalThis.document,window:globalThis.window,fetch:globalThis.fetch,setInterval:globalThis.setInterval,now:Date.now};
   try {
     globalThis.document={getElementById:element,addEventListener(){},createElement(){return element('link');},hidden:false};
@@ -32,13 +33,16 @@ test('dashboard renders two independent timers', async()=>{
     globalThis.setInterval=()=>0;Date.now=()=>instant;
     globalThis.fetch=async path=>({ok:true,json:async()=>path.startsWith('watchdog-')?{status:'healthy',checked_at:iso(-1)}:
       path.startsWith('checkin-')?{status:'ok',checked_at:iso(-1),last_verified_claim_at:iso(-1)}:
-      {...standard,slots:{standard,battle_pass:battle},next_check_at:battle.next_check_at}});
+      research});
     await import('./app.mjs?render-test');
     await new Promise(resolve=>setImmediate(resolve));
     assert.equal(element('countdown').textContent,'01:00:00');
     assert.equal(element('battleCountdown').textContent,'00:20:00');
     assert.equal(element('researchState').textContent,'RESEARCHING');
     assert.equal(element('battleState').textContent,'RESEARCHING');
+    research={...research,status:'start_failed'};
+    await element('refresh').handlers.click();
+    assert.equal(element('nextClaim').textContent,'Live check target: next available run');
   } finally {
     globalThis.document=originals.document;globalThis.window=originals.window;globalThis.fetch=originals.fetch;
     globalThis.setInterval=originals.setInterval;Date.now=originals.now;

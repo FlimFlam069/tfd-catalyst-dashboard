@@ -1,4 +1,4 @@
-import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs?v=2.1.0';
+import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs?v=2.1.1';
 const $ = id => document.getElementById(id);
 const repo = 'https://github.com/FlimFlam069/-tfd-companion-automation';
 const data = {research:null,watchdog:null,checkin:null};
@@ -34,7 +34,7 @@ function render() {
   const slot=d=>`${date(d.toISOString())} • ${duration((d-now)/1000)}`;
   $('nextSync').textContent=`Next cron target: ${slot(tick)}`;
   $('nextWatch').textContent=`Next cron target: ${slot(watch)}`;
-  $('nextClaim').textContent=due!==null?`Live check target: ${date(r.next_check_at)}${due<=now?' • overdue/due now':''}`:'Live check target: next available run';
+  $('nextClaim').textContent=r?.status==='researching'&&due!==null?`Live check target: ${date(r.next_check_at)}${due<=now?' • overdue/due now':''}`:'Live check target: next available run';
   $('catalystCount').textContent=Number.isFinite(r?.lifetime_claimed_by_automation)?r.lifetime_claimed_by_automation.toLocaleString():'—';
   $('lastCatalystClaimed').textContent=`Last Catalyst claimed: ${date(r?.last_catalyst_claimed_at)}`;
   const current=rewardCurrent(c,now);
