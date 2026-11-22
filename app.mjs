@@ -1,4 +1,4 @@
-import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs?v=2.2.0';
+import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs?v=2.3.0';
 const $ = id => document.getElementById(id);
 const repo = 'https://github.com/FlimFlam069/-tfd-companion-automation';
 const data = {research:null,watchdog:null,checkin:null};
@@ -39,6 +39,8 @@ function render() {
   $('nextClaim').textContent=r?.status==='researching'&&due!==null?`Live check target: ${date(r.next_check_at)}${due<=now?' • overdue/due now':''}`:'Live check target: next available run';
   $('catalystCount').textContent=Number.isFinite(r?.lifetime_claimed_by_automation)?r.lifetime_claimed_by_automation.toLocaleString():'—';
   $('lastCatalystClaimed').textContent=`Last Catalyst claimed: ${date(r?.last_catalyst_claimed_at)}`;
+  $('activatorCount').textContent=Number.isFinite(r?.activator_claimed_by_automation)?r.activator_claimed_by_automation.toLocaleString():'—';
+  $('lastActivatorClaimed').textContent=`Last Activator claimed: ${date(r?.last_activator_claimed_at)}`;
   const current=rewardCurrent(c,now);
   const ca=time(c?.checked_at),stale=ca===null||now-ca>8*3600000||ca>now+60000;
   $('checkinState').textContent=current?(c?.claim_source==='automation'?'✓ CLAIM VERIFIED — AUTOMATION':'✓ REWARD RECEIVED'):c?.status==='error'?'ATTENTION':'AWAITING TODAY’S VERIFICATION';
