@@ -1,4 +1,4 @@
-import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs?v=2.1.1';
+import {VERSION,time,nextSlot,nextCheckin,rewardCurrent,researchHealth,watchdogHealth,catalystSlotView} from './health.mjs?v=2.2.0';
 const $ = id => document.getElementById(id);
 const repo = 'https://github.com/FlimFlam069/-tfd-companion-automation';
 const data = {research:null,watchdog:null,checkin:null};
@@ -29,6 +29,8 @@ function render() {
   $('liveFlag').className=issues?'warn':'live';
   renderSlot('researchState','countdown','completeAt',r?.slots?.standard||r,now);
   renderSlot('battleState','battleCountdown','battleCompleteAt',r?.slots?.battle_pass,now);
+  renderSlot('activatorState','activatorCountdown','activatorCompleteAt',r?.slots?.activator_standard,now);
+  renderSlot('activatorBattleState','activatorBattleCountdown','activatorBattleCompleteAt',r?.slots?.activator_battle_pass,now);
   const due=time(r?.next_check_at);
   const tick=nextSlot(now,[2,7,12,17,22,27,32,37,42,47,52,57]),watch=nextSlot(now,[13,43]);
   const slot=d=>`${date(d.toISOString())} • ${duration((d-now)/1000)}`;
