@@ -1,10 +1,10 @@
 {
   "research_name": "Crystallization Catalyst",
   "status": "deferred_game_active",
-  "checked_at": "2026-11-21T20:00:19.028594-05:00",
-  "remaining_seconds": 6883,
-  "estimated_complete_at": "2026-11-21T21:54:55.417968-05:00",
-  "next_check_at": "2026-11-21T21:51:55.417968-05:00",
+  "checked_at": "2026-11-21T20:00:41.533380-05:00",
+  "remaining_seconds": 6862,
+  "estimated_complete_at": "2026-11-21T21:54:55.936085-05:00",
+  "next_check_at": "2026-11-21T21:51:55.936085-05:00",
   "early_check_seconds": 180,
   "detail": "Battle Pass: Claim deferred because game is active",
   "slot": "Standard",
@@ -13,10 +13,10 @@
     "standard": {
       "research_name": "Crystallization Catalyst",
       "status": "researching",
-      "checked_at": "2026-11-21T20:00:12.417968-05:00",
-      "remaining_seconds": 6883,
-      "estimated_complete_at": "2026-11-21T21:54:55.417968-05:00",
-      "next_check_at": "2026-11-21T21:51:55.417968-05:00",
+      "checked_at": "2026-11-21T20:00:33.936085-05:00",
+      "remaining_seconds": 6862,
+      "estimated_complete_at": "2026-11-21T21:54:55.936085-05:00",
+      "next_check_at": "2026-11-21T21:51:55.936085-05:00",
       "early_check_seconds": 180,
       "detail": "Research active; adaptive next check scheduled",
       "slot": "Standard",
@@ -25,9 +25,9 @@
     "battle_pass": {
       "research_name": "(Battle Pass) Crystallization Catalyst",
       "status": "deferred_game_active",
-      "checked_at": "2026-11-21T20:00:19.027932-05:00",
+      "checked_at": "2026-11-21T20:00:41.532595-05:00",
       "remaining_seconds": 0,
-      "estimated_complete_at": "2026-11-21T20:00:19.027932-05:00",
+      "estimated_complete_at": "2026-11-21T20:00:41.532595-05:00",
       "next_check_at": null,
       "early_check_seconds": 180,
       "detail": "Claim deferred because game is active",
@@ -35,9 +35,9 @@
       "research_id": "303010828"
     }
   },
-  "github_run_id": "44969324003",
-  "github_run_number": "1650",
-  "github_event": "schedule",
+  "github_run_id": "44969332552",
+  "github_run_number": "1651",
+  "github_event": "workflow_dispatch",
   "lifetime_claimed_by_automation": 274,
   "last_catalyst_claimed_at": "2026-11-21T14:40:31-05:00"
 }
